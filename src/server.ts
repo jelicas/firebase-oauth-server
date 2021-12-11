@@ -1,7 +1,10 @@
-import express from 'express';
+import express, { Application } from 'express';
+import 'dotenv/config';
 
-const app = express();
+const app: Application = express();
 
-app.listen(3000, () => {
-  console.log(`Listening on 3000`);
-})
+const port = process.env.PORT;
+
+app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
